@@ -1,0 +1,154 @@
+html,
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #ffffff;
+    background: #242424;
+}
+
+.page-wrapper {
+    display: flex;
+    width: 100%;
+} 
+
+/* SIDEBAR STYLING */
+
+#sidebar {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 245px;
+    background: #171717;
+}
+
+#sidebar-header {
+    text-align: center;
+    background: rgb(41, 41, 41);
+    border-bottom: 2px crimson solid;
+    width: 100%;
+}
+
+#sidebar ul {
+    padding: 0 0 10px 0;
+    font-size: 24px;
+}
+
+#sidebar ul>li {
+    padding: 0;
+}
+
+#sidebar ul>li a:hover {
+    background-color:gray;
+    cursor: pointer;
+}
+
+#sidebar .collapse-option {
+    color: inherit;
+    padding-left: 0;
+    border: none;
+    background: transparent;
+    text-align: left;
+    width: 100%;
+}
+
+#sidebar .collapse-option:hover {
+    background: gray;
+}
+
+#sidebar .option-text .chevron {
+    position: relative;
+    top: 4px;
+    float: right;
+    font-size: 20px;
+}
+
+.sub-option > li > a {
+    display: inline-block;
+    padding-left: 32px;
+}
+
+.icon-logo {
+    display: inline-block;
+    text-align: center;
+    height: 32px;
+    width: 32px;
+}
+
+#sidebar .option-text.minimize {
+    /* Moves text off screen */
+    position: absolute;
+    left: -999px;
+}
+
+#sidebar a:link,
+#sidebar a:visited {
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sub-option {
+    background: #171717;
+}
+
+#sidebar-footer {
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+}
+#sidebar-footer.minimize {
+    transform: rotate(180deg);
+}
+
+#toggle-sidebar {
+    color: #ffffff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+}
+
+#toggle-sidebar span {
+    position: relative;
+    right: 1px;
+}
+
+#toggle-sidebar:hover {
+    color: #171717;
+    background: #ffffff;
+}
+
+/* PAGE CONTENT STYLING */
+
+#page-content-wrapper {
+    width: calc(100% - 245px);
+    padding: 25px;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#page-content-wrapper a:link {
+    color: #38a7f7;
+    text-decoration: underline;
+}
+
+#page-content-wrapper a:visited {
+    color: #ffffff;
+}
+
+#Find a {
+    text-align: center;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 575px) {
+    #page-content-wrapper {
+        width: 100%;
+    }
+}

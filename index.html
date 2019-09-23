@@ -1,33 +1,194 @@
-<!DOCTYPE html>
-<html>
+<!-- Inspiration/following https://bootstrapious.com/p/bootstrap-sidebar -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 
-<head>
-	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
-	<title> Welcome! </title>
-</head>
+        <!-- Bootstrap css cdn -->
+        <link rel="stylesheet" 
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+              crossorigin="anonymous">
 
-<body>
-<h1> Welcome! </h1>
-<p> Hello! Welcome to my website. As you can see, this site is a work in progress. I am not a web developer by trade, but I am definitely learning.</p>
-<p> Allow me to tell you more about myself. I am currently a Computer Science and <a title="What is American Studies?" href="https://ams.ucdavis.edu/what-american-studies-0"> American Studies</a> double major at the University of California, Davis, class of 2020.
-		The goal of this website is to act of a personal portfolio for my various projects and a showcase of my skills and abilities.
-</p>
-<p> This website is a "live" document that will update as I continue to put more experience under my belt. Excuse the poor design, but I hope you will be able to know more about me from my website!</p>
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="css/style.css">
 
-<br>
+        <!-- For the icons used in the site -->
+        <script src="https://kit.fontawesome.com/670a190237.js" crossorigin="anonymous"></script>
 
-<h1> Current Projects </h1>
-<p> I am currently in the planning process of several project which will up put unto GitHub once they reach their initial working stages. <p>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+                crossorigin="anonymous">
+        </script>
 
-<br>
+        <!-- popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+                crossorigin="anonymous">
+        </script>
 
-<h2> Useful Links <h2>
-	<a href="https://github.com/mwchiao" target="_blank">
-		<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Profile" title="GitHub Profile" style="width:150px;height:150px">
-	<a>
+        <!-- Bootstrap -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+                crossorigin="anonymous">
+        </script>
 
-</body>
+        <title>Welcome</title>
+    </head>
 
+    <body>
+        
+        <div class="page-wrapper">
+            <script src="js/main.js"></script>
+            <!-- Sidebar -->
+            <nav id="sidebar" class="d-none d-sm-inline-block">
+                <div id="sidebar-header">
+                    <h3>Maxim's website</h3>
+                </div>
+                <ul class="options list-unstyled">
+                    <li>
+                        <span class="option-text">
+                            <button class="collapse-option" data-toggle="collapse" data-target="#info">
+                                <div class="icon-logo">
+                                    <i class="fas fa-info"></i>
+                                </div>
+                                Information
+                                <span class="chevron">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                        </span>
+                        <ul class="collapse list-unstyled sub-option" id="info">
+                            <li>
+                                <a href="#Welcome">Welcome</a>
+                            </li>
+                            <li>
+                                <a href="#About">About Me</a>
+                            </li>
+                            <li>
+                                <a href="#Todo">To-do list</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="option-text">
+                            <a href="https://github.com/mwchiao" target="_blank">
+                                <div class="icon-logo">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                GitHub
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="option-text">
+                            <a href="https://www.linkedin.com/in/mwchiao/" target="_blank">
+                                <div class="icon-logo">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                LinkedIn
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+                
+                <div id="sidebar-footer">
+                    <button id="toggle-sidebar" 
+                            data-toggle="popover" 
+                            data-placement="left"
+                            data-content="Coming soon"
+                        >
+                        <span>
+                            <i class="fas fa-angle-double-left"></i>
+                        </span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div id="Welcome">
+                    <h1>Welcome!</h1>
+                    <p>
+                        It looks like you have made your way to my website! Take a look around and see what I have to
+                        offer, like this website itself! Some may call if plain, and bare bones but I like to call it 
+                        <span style="font-style: italic; font-weight: bold">minimalist</span>.
+                        <br><br>
+                        This is sort of a "live" document, a portfolio of sorts. So if you are curious of what I am up 
+                        to, come on back and see if anything has changed!
+                    </p>
+                </div>
+                <br>
+                <div id="About">
+                    <h1>About Me</h1>
+                    <p>
+                        As the URL says, my name is Maxim Chiao. I am currently a 4th year, Computer Science and 
+                        <a href="https://ams.ucdavis.edu/" target="_blank">American Studies</a> double major at the 
+                        University of California, Davis. My expected graduation date is December, 2020.
+                        <br><br>
+                        I like programming and like to explore the various fields in the realm of Computer Science. I 
+                        really like knowing a little bit of everything (in general) because you will never know when it 
+                        will become a conversation starter or ice breaker one day. <br>
+                        I love looking at the nitty-gritty of how things work, it is interesting to me to see how things
+                        are broken down and how those pieces interact with each other. I also have a particular interest
+                         in lower-level languages like C/C++ because of how close they are to machine level and what 
+                        that means for performance and things of that nature. (Don't worry higher level languages, I 
+                        like you too!).
+                        <br><br>
+                        Besides Computer Science, my next favorite subject is history. I just like learning about the 
+                        past and how civilizations have come and go, and how they contributed to the world today. I 
+                        especially like history stuff that you have to look for and it not really mentioned in any 
+                        history books.
+                        <br><br>
+                        I also love Minecraft. One of my bucket-list items is to make a Minecraft mod. That bucket-list 
+                        item is also the reason I got into programming and Computer Science, so the game has a special 
+                        place in my heart ♥.
+                    </p>
+                </div>
+                <br>
+                <div id="Find" class="d-sm-none">
+                    <h1>Where to find me and my work</h1>
+                    <p>
+                        <a href="https://github.com/mwchiao" target="_blank">
+                            <div class="icon-logo">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            GitHub
+                        </a>
+                        <br>
+                        <a href="https://www.linkedin.com/in/mwchiao/" target="_blank">
+                            <div class="icon-logo">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            LinkedIn
+                        </a>
+                    </p>
+                    <br>
+                </div>
+                <div id="Todo">
+                    <h1>To-do list</h1>
+                    <p>
+                        Things I want to do with the website: (Updated 9/22/19)<br>
+                        <ol>
+                            <li>Add sidebar functionalities (animations and such)</li>
+                            <li>Improve styling/work out any kinks in the code</li>
+                            <li>Integrate some framework (probably Angular) into the website</li>
+                            <li>Improve the mobile experience</li>
+                            <li>Add acessibility features</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    <!-- If you are reading this, I welcome you to the source code 
+         I am only in the process of learning to make websites so this might not be completely optimized or following 
+         the industry's best practices but I'll get there with practice!
+    -->
 </html>
