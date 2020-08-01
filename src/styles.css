@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: monospace;
+    color: white;
+    background-color: #343a40 !important;
+}
+
+a:hover, a:focus {
+    color: lightblue;
+    text-decoration: underline !important;
+}
+
+div.section {
+    padding-bottom: 20px;
+}
+
+div.section-header {
+    padding: 0 15px 0 15px;
+    font-size: 36px;
+}
+
+div.sub-header {
+    font-size: 24px;
+}

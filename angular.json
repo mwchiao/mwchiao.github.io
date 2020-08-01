@@ -17,6 +17,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "firebase",
+              "firebase/app",
+              "@firebase/app",
+              "@firebase/database",
+              "@firebase/util",
+              "@firebase/component"
+            ],
             "outputPath": "dist/mwchiao-ghpage",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -121,8 +130,13 @@
               "devServerTarget": "mwchiao-ghpage:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mwchiao-ghpage"
 }

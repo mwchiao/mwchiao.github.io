@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mwchiao-ghpage": {
+      "hosting": {
+        "mwchiao-ghpage": [
+          "mwchiao-ghpage"
+        ]
+      }
+    }
+  }
+}

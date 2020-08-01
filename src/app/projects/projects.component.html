@@ -1,0 +1,31 @@
+<div id="projects" class="section">
+    <div class="section-header">Projects</div>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-3">
+            <div *ngFor="let project of projects | async" class="project col">
+                <div class="card text-white bg-dark border-light">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">{{project.name}}</h5>
+                            <p [ngClass]="{
+                                'text-warning': project.status=='WIP',
+                                'text-success': project.status=='Complete',
+                                'text-primary': project.status=='On-going'
+                            }">{{project.status}}</p>
+                        </div>
+                        <p class="card-text">{{project.description}}</p>
+                        <span *ngFor="let tech of project.techStack | keyvalue" class="badge badge-pill badge-info" style="margin-right: 0.5em">{{tech.value}}</span>
+                    </div>
+                    <div class="card-footer">
+                        <a target="_blank" class="card-link" href="{{project.source}}">
+                            Source
+                        </a>
+                        <a target="_blank" *ngFor="let link of project.otherLinks | keyvalue" class="card-link" href="{{link.value.url}}">
+                            {{link.value.name}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div id="experience" class="section">
+    <div class="section-header">Skills & Experience</div>
+    <div class="container-fluid">
+        <div class="section row">
+            <div class="col">
+                <div class="sub-header">Work Experience</div>
+                <div class="list-group list-group-flush">
+                    <div *ngFor="let job of jobs | async" class="list-group-item text-white bg-dark job-entry">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{job.title}}</h5>
+                            <p>{{job.start}} - {{job.end}}</p>
+                        </div>
+                        <p class="text-info">@ {{job.company}}</p>
+                        <p class="mb-1">{{job.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section row">
+            <div class="col">
+                <div class="sub-header">Skills</div>
+                <div id="skills-list" class="list-group">
+                    <div class="row row-cols-md-3 row-cols-1">
+                        <div *ngFor="let skill of skills | async"class="list-group-item bg-dark text-white col">
+                            {{skill.name}}
+                            <span [ngClass]="{
+                                'float-right badge badge-pill': true,
+                                'badge-success': skill.proficiency == 'Expert',
+                                'badge-primary': skill.proficiency == 'Proficient',
+                                'badge-info': skill.proficiency == 'Beginner'
+                            }">{{skill.proficiency}}</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

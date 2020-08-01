@@ -1,0 +1,12 @@
+.job-entry {
+    border-color: white;
+}
+
+#skills-list {
+    padding: 0 15px 0 15px;
+}
+
+#skills-list .list-group-item{
+    border: none;
+    border-bottom: 1px solid white;
+}
