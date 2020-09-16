@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { fadeInAnim } from '../animations';
+import { trigger, transition, query, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-experiences',
@@ -11,7 +9,8 @@ import { fadeInAnim } from '../animations';
   animations: [
     trigger('loadIn', [
       transition('* => *', [
-        useAnimation(fadeInAnim)
+        query('.card-body', style({opacity: 0})),
+        query('.card-body', animate('1s ease-in', style({opacity: 1})))
       ])
     ])
   ]
@@ -19,7 +18,7 @@ import { fadeInAnim } from '../animations';
 export class ExperiencesComponent implements OnInit {
   private PAGINATION_LIMIT = 5;
 
-  private _jobs$: Observable<any[]>;
+  @Input() private _jobs$: Observable<any[]>;
   jobs: any[];
   currentJobIndex: number = 0;
 
@@ -29,8 +28,8 @@ export class ExperiencesComponent implements OnInit {
 
   loading:boolean = true;
   
-  constructor(private db: AngularFireDatabase) { 
-    this._jobs$ = db.list('jobs').valueChanges();
+  constructor() {
+    this._jobs$ = new Observable<any[]>();
     this.jobs = [];
   }
 

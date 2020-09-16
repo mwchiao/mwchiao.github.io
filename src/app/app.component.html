@@ -1,3 +1,3 @@
-<app-experiences></app-experiences>
-<app-projects></app-projects>
-<app-skills></app-skills>
+<app-experiences [_jobs$]="getJobs()"></app-experiences>
+<app-projects [_projects$]="getProjects()"></app-projects>
+<app-skills [_skills$]="getSkills()"></app-skills>

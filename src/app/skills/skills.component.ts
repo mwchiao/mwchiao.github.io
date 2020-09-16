@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeInAnim } from '../animations'
@@ -19,13 +18,13 @@ import { fadeInAnim } from '../animations'
 
 export class SkillsComponent implements OnInit {
 
-  private _skills$: Observable<any[]>;
+  @Input() private _skills$: Observable<any[]>;
   skills: any[];
   loading: boolean = true;
 
-  constructor(private db: AngularFireDatabase) {
-    this._skills$ = db.list('skills').valueChanges();
-    this.skills = []
+  constructor() {
+    this._skills$ = new Observable<any[]>();
+    this.skills = [];
   }
 
   ngOnInit(): void {

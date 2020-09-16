@@ -1,5 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database'
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { trigger,transition, useAnimation } from '@angular/animations'
 import { fadeInAnim } from '../animations';
@@ -18,7 +17,7 @@ import { fadeInAnim } from '../animations';
 })
 export class ProjectsComponent implements OnInit {
 
-  private _projects$: Observable<any[]>;
+  @Input() private _projects$: Observable<any[]>;
   projects: any[];
 
   private _width: number = 0;
@@ -30,8 +29,8 @@ export class ProjectsComponent implements OnInit {
 
   loading: boolean = true;
 
-  constructor(private db: AngularFireDatabase) { 
-    this._projects$ = db.list('projects').valueChanges();
+  constructor() { 
+    this._projects$ = new Observable<any[]>();
     this.projects = [];
   }
 
