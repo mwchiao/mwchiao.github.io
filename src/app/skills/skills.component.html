@@ -1,0 +1,24 @@
+<div id="skills" class="section">
+    <h1>Skills</h1>
+    <div class="d-flex align-items-center justify-content-center" *ngIf="!loading && isVisible else loadingSpinner" [@loadIn]="skills.length">
+        <ul class="d-flex list-group skill-list">
+            <li *ngFor="let skill of skills" class="list-group-item">
+                <div class="skill-item">
+                    <span>{{skill.name}}</span>
+                    <span [ngClass]="{
+                        'text-primary': skill.proficiency == 'Beginner',
+                        'text-warning': skill.proficiency == 'Proficient',
+                        'text-success': skill.proficiency == 'Expert'
+                    }">{{skill.proficiency}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <ng-template #loadingSpinner>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-white" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </ng-template>
+</div>

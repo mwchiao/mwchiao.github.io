@@ -1,38 +1,39 @@
 <div id="experience" class="section">
-    <div class="section-header">Skills & Experience</div>
-    <div class="container-fluid">
-        <div class="section row">
-            <div class="col">
-                <div class="sub-header">Work Experience</div>
-                <div class="list-group list-group-flush">
-                    <div *ngFor="let job of jobs | async" class="list-group-item text-white bg-dark job-entry">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">{{job.title}}</h5>
-                            <p>{{job.start}} - {{job.end}}</p>
-                        </div>
-                        <p class="text-info">@ {{job.company}}</p>
-                        <p class="mb-1">{{job.description}}</p>
-                    </div>
+    <h1>Experience</h1>
+    <div class="jobs-container" *ngIf="!loading && isVisible else loadingSpinner">
+        <div class="jobs-wrapper">
+            <div class="jobs-pagination">
+                <button class="btn" (click)="changeIndex(-1)" [disabled]="currentJobIndex == 0">
+                    <span class="fas fa-chevron-left"></span><span class="sr-only">Previous job entry</span>
+                </button>
+                <div class="indicators">
+                    <span *ngFor="let p of [].constructor(numIndicators); let i = index" 
+                          class="fas fa-circle page-indicator"
+                          [ngClass]="{'active-page': isActive(i)}">
+                    </span>
                 </div>
+                <button class="btn" (click)="changeIndex(1)" [disabled]="currentJobIndex == jobs.length - 1">
+                    <span class="fas fa-chevron-right"></span><span class="sr-only">Next job entry</span>
+                </button>
             </div>
-        </div>
-        <div class="section row">
-            <div class="col">
-                <div class="sub-header">Skills</div>
-                <div id="skills-list" class="list-group">
-                    <div class="row row-cols-md-3 row-cols-1">
-                        <div *ngFor="let skill of skills | async"class="list-group-item bg-dark text-white col">
-                            {{skill.name}}
-                            <span [ngClass]="{
-                                'float-right badge badge-pill': true,
-                                'badge-success': skill.proficiency == 'Expert',
-                                'badge-primary': skill.proficiency == 'Proficient',
-                                'badge-info': skill.proficiency == 'Beginner'
-                            }">{{skill.proficiency}}</span>   
-                        </div>
+            <div class="card" [@loadIn]="jobs.length">
+                <div class="card-body">
+                    <div class="card-title mb-1">
+                        {{jobs[currentJobIndex].title}}
+                        <span class="text-success">@ {{jobs[currentJobIndex].company}}</span>
                     </div>
+                    <p class="text-info mb-0" style="font-size: 15.5px">{{jobs[currentJobIndex].company}} - {{jobs[currentJobIndex].department}}</p>
+                    <p style="font-size: 14px;">{{jobs[currentJobIndex].start}} - {{jobs[currentJobIndex].end}}</p>
+                    <p>{{jobs[currentJobIndex].description}}</p>
                 </div>
             </div>
         </div>
     </div>
+    <ng-template #loadingSpinner>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-white" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </ng-template>
 </div>

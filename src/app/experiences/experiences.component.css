@@ -1,12 +1,70 @@
-.job-entry {
-    border-color: white;
+.jobs-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#skills-list {
-    padding: 0 15px 0 15px;
+.jobs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
 }
 
-#skills-list .list-group-item{
-    border: none;
-    border-bottom: 1px solid white;
+.jobs-card {
+    display: inherit;
+}
+
+.jobs-pagination {
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    margin: 0 10px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background-color: var(--indigo);
+}
+
+.btn > span {
+    color: white;
+}
+
+.indicators {
+    width: 6em;
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-indicator {
+    font-size: 0.5rem; 
+    color: #4d4d4d;
+    padding-bottom: 2px;
+    margin: 0 5px;
+}
+
+.page-indicator.active-page {
+    color: white;
+    font-size: 0.75rem;
+    transition: font-size 0.2s ease;
+}
+
+.card {
+    width: 100%;
+    color: white;
+    background-color: #303030;
+}
+
+@media only screen and (max-width: 768px) {
+    .jobs-wrapper {
+        width: 100%;
+    }
 }

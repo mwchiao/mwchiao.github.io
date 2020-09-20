@@ -1,31 +1,43 @@
 <div id="projects" class="section">
-    <div class="section-header">Projects</div>
-    <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-3">
-            <div *ngFor="let project of projects | async" class="project col">
-                <div class="card text-white bg-dark border-light">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title">{{project.name}}</h5>
-                            <p [ngClass]="{
-                                'text-warning': project.status=='WIP',
-                                'text-success': project.status=='Complete',
-                                'text-primary': project.status=='On-going'
-                            }">{{project.status}}</p>
+    <h1>Projects</h1>
+    <div class="container-fluid" style="margin-top: 25px;" *ngIf="!loading && isVisible else loadingSpinner">
+        <div class="row" *ngFor="let row of rows; let i = index" [@loadIn]="projects.length">
+            <div class="col-md-6 col-lg-4" *ngFor="let col of [].constructor(row); let j = index">
+                <div class="card">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div class="mb-2">
+                            <h5 class="card-title">{{projects[i*numCols + j].name}}</h5>
+                            <span [ngClass]="{
+                                'text-warning': projects[i*numCols + j].status=='WIP',
+                                'text-success': projects[i*numCols + j].status=='Complete',
+                                'text-primary': projects[i*numCols + j].status=='On-going'
+                            }">
+                            {{projects[i*numCols + j].status}}
+                        </span>
                         </div>
-                        <p class="card-text">{{project.description}}</p>
-                        <span *ngFor="let tech of project.techStack | keyvalue" class="badge badge-pill badge-info" style="margin-right: 0.5em">{{tech.value}}</span>
+                        <p class="card-text">{{projects[i*numCols + j].description}}</p>
+                        <div style="overflow-x: auto;">
+                            <span *ngFor="let tech of projects[i*numCols + j].techStack | keyvalue"
+                                  class="badge mr-2"
+                                  >
+                                {{tech.value}}
+                            </span>
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <a target="_blank" class="card-link" href="{{project.source}}">
-                            Source
-                        </a>
-                        <a target="_blank" *ngFor="let link of project.otherLinks | keyvalue" class="card-link" href="{{link.value.url}}">
-                            {{link.value.name}}
+                        <a target="_blank" class="card-link" href="{{projects[i*numCols + j].source}}">
+                            <span class="fab fa-github mr-2"></span>Source
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <ng-template #loadingSpinner>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-white" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </ng-template>
 </div>

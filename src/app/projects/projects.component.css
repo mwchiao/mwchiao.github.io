@@ -1,7 +1,27 @@
-.project {
-    padding-bottom: 1em;
+.row {
+    margin-bottom: 1em;
+}
+
+.card {
+    color: white;
+    background-color: #303030;
+    height: 100%;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.badge {
+    background-color: var(--indigo);
 }
 
 .card-footer {
-    border-top: 1px solid rgba(255,255,255,.5);
+    border-top-color: #4d4d4d;
+    background-color: #303030;
+}
+
+.card-link:hover,
+.card-link:focus {
+    text-decoration: underline;
 }
