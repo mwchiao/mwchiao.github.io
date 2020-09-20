@@ -10,13 +10,15 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { SkillsComponent } from './skills/skills.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExperiencesComponent,
     ProjectsComponent,
-    SkillsComponent
+    SkillsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

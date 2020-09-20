@@ -1,0 +1,23 @@
+.navbar {
+    margin-top: 0.75rem;
+    padding: 0;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: transparent;
+}
+
+.nav-toggle:active {
+    background: lightgray;
+}
+
+.navbar-nav > .nav-item {
+    margin-right: 0.45em;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-items {
+        flex-direction: column;
+    }
+}

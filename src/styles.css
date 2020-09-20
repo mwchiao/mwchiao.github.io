@@ -45,15 +45,6 @@ footer {
     border-color: transparent;
 }
 
-.navigation-bar {
-    font-size: 18px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 49px;
-}
-
 #sidebar {
     display: flex;
     justify-content: right;
@@ -307,10 +298,6 @@ a.disabled {
 
     .mobile {
         display: block;
-    }
-
-    .nav-items {
-        font-size: 22px;
     }
 
     .desktop {
