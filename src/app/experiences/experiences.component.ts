@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { trigger, transition, query, animate, style } from '@angular/animations';
 
@@ -15,7 +15,7 @@ import { trigger, transition, query, animate, style } from '@angular/animations'
     ])
   ]
 })
-export class ExperiencesComponent implements OnInit {
+export class ExperiencesComponent implements OnInit, AfterViewInit {
   private PAGINATION_LIMIT = 5;
 
   @Input() private _jobs$: Observable<any[]>;
@@ -26,11 +26,24 @@ export class ExperiencesComponent implements OnInit {
   private _numPageGroups: number = 0;
   numIndicators: number = this.PAGINATION_LIMIT;
 
-  loading:boolean = true;
+  loading: boolean = true;
+
+  private _observer: IntersectionObserver;
+  isVisible: boolean = false;
   
-  constructor() {
+  constructor(private el: ElementRef) {
     this._jobs$ = new Observable<any[]>();
     this.jobs = [];
+
+    this._observer = new IntersectionObserver((entries) => {
+      entries.forEach( entry => {
+        if (entry.isIntersecting === true) {
+          this.isVisible = true;
+          this._observer.unobserve(this.el.nativeElement as HTMLElement);
+          this._observer.disconnect();
+        }
+      });
+    }, {root: document.querySelector("#experience")});
   }
 
   ngOnInit(): void {
@@ -42,6 +55,10 @@ export class ExperiencesComponent implements OnInit {
       if (this.currentJobIndex > this.jobs.length - 1) this.currentJobIndex = this.jobs.length - 1;
       this.loading = false;
     });
+  }
+
+  ngAfterViewInit() {
+    this._observer.observe(this.el.nativeElement as HTMLElement);
   }
 
   changeIndex(change: number) {

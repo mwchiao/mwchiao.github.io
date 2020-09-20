@@ -1,6 +1,6 @@
 <div id="experience" class="section">
-    <h1 class="sticky">Experience</h1>
-    <div class="jobs-container" *ngIf="!loading; else loadingSpinner">
+    <h1>Experience</h1>
+    <div class="jobs-container" *ngIf="!loading && isVisible else loadingSpinner">
         <div class="jobs-wrapper">
             <div class="jobs-pagination">
                 <button class="btn" (click)="changeIndex(-1)" [disabled]="currentJobIndex == 0">

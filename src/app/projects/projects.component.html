@@ -1,6 +1,6 @@
 <div id="projects" class="section">
-    <h1 class="sticky">Projects</h1>
-    <div class="container-fluid" style="margin-top: 25px;" *ngIf="!loading else loadingSpinner">
+    <h1>Projects</h1>
+    <div class="container-fluid" style="margin-top: 25px;" *ngIf="!loading && isVisible else loadingSpinner">
         <div class="row" *ngFor="let row of rows; let i = index" [@loadIn]="projects.length">
             <div class="col-md-6 col-lg-4" *ngFor="let col of [].constructor(row); let j = index">
                 <div class="card">

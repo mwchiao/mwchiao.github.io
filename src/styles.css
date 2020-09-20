@@ -3,6 +3,10 @@
     --darkbg: #242424;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: white;
     background-color: var(--darkbg);
@@ -246,16 +250,9 @@ footer {
     display: none;
 }
 
-.disabled {
+a.disabled {
     pointer-events: none;
     color: darkgray;
-}
-
-.sticky {
-    position: sticky;
-    background-color: var(--darkbg);
-    top: 49px;
-    z-index: 2;
 }
 
 .section {

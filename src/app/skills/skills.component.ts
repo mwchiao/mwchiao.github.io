@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeInAnim } from '../animations'
@@ -16,15 +16,28 @@ import { fadeInAnim } from '../animations'
   ]
 })
 
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, AfterViewInit {
 
   @Input() private _skills$: Observable<any[]>;
   skills: any[];
   loading: boolean = true;
 
-  constructor() {
+  private _observer: IntersectionObserver;
+  isVisible = false;
+
+  constructor(private el: ElementRef) {
     this._skills$ = new Observable<any[]>();
     this.skills = [];
+
+    this._observer = new IntersectionObserver((entries) => {
+      entries.forEach( entry => {
+        if (entry.isIntersecting === true) {
+          this.isVisible = true;
+          this._observer.unobserve(this.el.nativeElement as HTMLElement);
+          this._observer.disconnect();
+        }
+      });
+    }, {root: document.querySelector("#skills")});
   }
 
   ngOnInit(): void {
@@ -32,7 +45,11 @@ export class SkillsComponent implements OnInit {
       this.loading = true;
       this.skills = skills;
       this.loading = false;
-    })
+    });
+  }
+  
+  ngAfterViewInit() {
+    this._observer.observe(this.el.nativeElement as HTMLElement);
   }
 
 }

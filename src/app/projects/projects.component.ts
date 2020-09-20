@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { trigger,transition, useAnimation } from '@angular/animations'
 import { fadeInAnim } from '../animations';
@@ -15,7 +15,7 @@ import { fadeInAnim } from '../animations';
     ])
   ]
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, AfterViewInit {
 
   @Input() private _projects$: Observable<any[]>;
   projects: any[];
@@ -29,9 +29,22 @@ export class ProjectsComponent implements OnInit {
 
   loading: boolean = true;
 
-  constructor() { 
+  private _observer: IntersectionObserver;
+  isVisible: boolean = false;
+
+  constructor(private el: ElementRef) { 
     this._projects$ = new Observable<any[]>();
     this.projects = [];
+    
+    this._observer = new IntersectionObserver((entries) => {
+      entries.forEach( entry => {
+        if (entry.isIntersecting === true) {
+          this.isVisible = true;
+          this._observer.unobserve(this.el.nativeElement as HTMLElement);
+          this._observer.disconnect();
+        }
+      });
+    }, {root: document.querySelector("#projects")});
   }
 
   ngOnInit(): void {
@@ -43,6 +56,10 @@ export class ProjectsComponent implements OnInit {
       this._configureGrid();
       this.loading = false;
     });
+  }
+
+  ngAfterViewInit() {
+    this._observer.observe(this.el.nativeElement as HTMLElement);
   }
 
   @HostListener('window:resize', ['$event'])
