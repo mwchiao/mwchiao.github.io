@@ -1,23 +1,58 @@
-.navbar {
-    margin-top: 0.75rem;
-    padding: 0;
+.navigation-bar {
+    padding: 0.5rem 0;
 }
 
 .nav-toggle {
     background: transparent;
     border: transparent;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    color: white;
 }
 
 .nav-toggle:active {
     background: lightgray;
 }
 
-.navbar-nav > .nav-item {
-    margin-right: 0.45em;
+.nav-items-list {
+    text-align: center;
+    margin-top: 0.5rem;
+    display: none;
 }
 
-@media only screen and (max-width: 768px) {
-    .navbar-items {
-        flex-direction: column;
+.nav-items-list.show {
+    display: block;
+}
+
+.nav-item {
+    margin-bottom: 1rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+    .navigation-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-items-list,
+    .nav-items-list.show {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        background: none;
+    }
+    
+    .nav-item {
+        margin-bottom: 0;
+    }
+
+    .nav-toggle {
+        display: none;
     }
 }
