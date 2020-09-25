@@ -1,15 +1,13 @@
 <header>
     <nav class="navigation-bar">
-        <a href="#top">🌱</a>
+        <a class="branding" href="#top"><span>maxim</span> 🌱</a>
         <button class="nav-toggle" 
                 (click)="toggleNavbar()"
                 attr.aria-expanded="{{!isCollapsed}}"
                 >
             <span class="fas fa-ellipsis-v"></span>
         </button>
-        <ul class="nostyle-list nav-items-list"
-            [ngClass]="{'show': !isCollapsed}"
-            >
+        <ul class="nostyle-list nav-items-list" [ngClass]="{'show': !isCollapsed}">
             <li class="nav-item"><a class="nav-link" href="#about">About me</a></li>
             <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
