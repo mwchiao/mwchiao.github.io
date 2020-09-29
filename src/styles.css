@@ -138,6 +138,7 @@ footer {
 #homepage-links {
     font-size: 18px;
     padding-bottom:10px;
+    margin-bottom: 1rem;
 }
 
 .nostyle-list {
@@ -247,6 +248,7 @@ a.disabled {
 }
 
 .section {
+    margin: auto 1rem;
     margin-bottom: 45px;
 }
 

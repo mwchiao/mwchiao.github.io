@@ -31,6 +31,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
     this._observer = new IntersectionObserver((entries) => {
       entries.forEach( entry => {
+        console.log(entry);
         if (entry.isIntersecting === true) {
           this.isVisible = true;
           this._observer.unobserve(this.el.nativeElement as HTMLElement);
