@@ -1,24 +1,16 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { trigger,transition, useAnimation } from '@angular/animations'
-import { fadeInAnim } from '../animations';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  animations: [
-    trigger('loadIn', [
-      transition('* => *' ,[
-        useAnimation(fadeInAnim)
-      ])
-    ])
-  ]
 })
-export class ProjectsComponent implements OnInit, AfterViewInit {
+export class ProjectsComponent implements OnInit {
 
   @Input() private _projects$: Observable<any[]>;
   projects: any[];
+  private _subscription: Subscription;
 
   private _width: number = 0;
   numCols: number = 0;
@@ -29,26 +21,14 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   loading: boolean = true;
 
-  private _observer: IntersectionObserver;
-  isVisible: boolean = false;
-
-  constructor(private el: ElementRef) { 
+  constructor() { 
     this._projects$ = new Observable<any[]>();
     this.projects = [];
-    
-    this._observer = new IntersectionObserver((entries) => {
-      entries.forEach( entry => {
-        if (entry.isIntersecting === true) {
-          this.isVisible = true;
-          this._observer.unobserve(this.el.nativeElement as HTMLElement);
-          this._observer.disconnect();
-        }
-      });
-    }, {root: document.querySelector("#projects")});
+    this._subscription = new Subscription();
   }
 
   ngOnInit(): void {
-    this._projects$.subscribe((projects) => {
+    this._subscription = this._projects$.subscribe((projects) => {
       this.loading = true;
       this.numProjects = projects.length;
       this.projects = projects;
@@ -58,8 +38,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this._observer.observe(this.el.nativeElement as HTMLElement);
+  ngOnDestroy(): void {
+    if (this._subscription) this._subscription.unsubscribe();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -85,5 +65,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     if (this.numProjects % this.numRows > 0) {
       this.rows[this.numRows - 1] = this.numProjects % this.numRows;
     }
+  }
+
+  get projects$(): Observable<any[]> {
+    return this._projects$;
   }
 }
