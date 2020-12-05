@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Job, Project, Skill } from './data-interfaces';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,25 +11,25 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'mwchiao-ghpage';
 
-  private _jobs$: Observable<any[]>;
-  private _projects$: Observable<any[]>;
-  private _skills$: Observable<any[]>;
+  private _jobs$: Observable<Job[]>;
+  private _projects$: Observable<Project[]>;
+  private _skills$: Observable<Skill[]>;
 
-  constructor(private db: AngularFireDatabase) {
-    this._jobs$ = db.list('jobs').valueChanges();
-    this._projects$ = db.list('projects').valueChanges();
-    this._skills$ = db.list("skills").valueChanges();
+  constructor(private afs: AngularFirestore) {
+    this._jobs$ = afs.collection<Job>("jobs" , ref => ref.orderBy("end", "desc")).valueChanges();
+    this._projects$ = afs.collection<Project>("projects", ref => ref.orderBy("date", "desc")).valueChanges();
+    this._skills$ = afs.collection<Skill>("skills", ref => ref.orderBy("name", "desc")).valueChanges();
   }
 
-  getJobs() {
+  get jobs(): Observable<Job[]>{
     return this._jobs$;
   }
 
-  getProjects() {
+  get projects(): Observable<Project[]> {
     return this._projects$;
   }
 
-  getSkills() {
+  get skills(): Observable<Skill[]> {
     return this._skills$;
   }
 }

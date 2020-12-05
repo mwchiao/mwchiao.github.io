@@ -18,13 +18,9 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "lodash",
-              "firebase",
               "firebase/app",
               "@firebase/app",
-              "@firebase/database",
-              "@firebase/util",
-              "@firebase/component"
+              "@firebase/firestore"
             ],
             "outputPath": "dist/mwchiao-ghpage",
             "index": "src/index.html",
@@ -52,7 +48,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,

@@ -1,8 +1,8 @@
 <div id="skills" class="section">
     <h1>Skills</h1>
-    <div class="d-flex align-items-center justify-content-center" *ngIf="!loading && isVisible else loadingSpinner" [@loadIn]="skills.length">
+    <div class="d-flex align-items-center justify-content-center" *ngIf="!loading else loadingSpinner">
         <ul class="d-flex list-group skill-list">
-            <li *ngFor="let skill of skills" class="list-group-item">
+            <li *ngFor="let skill of skills$ | async" class="list-group-item">
                 <div class="skill-item">
                     <span>{{skill.name}}</span>
                     <span [ngClass]="{

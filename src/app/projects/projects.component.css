@@ -12,10 +12,6 @@
     margin-bottom: 0;
 }
 
-.badge {
-    background-color: var(--indigo);
-}
-
 .card-footer {
     border-top-color: #4d4d4d;
     background-color: #303030;

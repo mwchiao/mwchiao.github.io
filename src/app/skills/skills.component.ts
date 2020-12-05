@@ -1,56 +1,35 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { fadeInAnim } from '../animations'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { Skill } from '../data-interfaces';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
-  animations: [
-    trigger('loadIn', [
-      transition('* => *', [
-        useAnimation(fadeInAnim)
-      ])
-    ])
-  ]
 })
 
-export class SkillsComponent implements OnInit, AfterViewInit {
+export class SkillsComponent implements OnInit, OnDestroy {
 
-  @Input() private _skills$: Observable<any[]>;
-  skills: any[];
+  @Input() private _skills$: Observable<Skill[]>;
+  private _subscription: Subscription;
   loading: boolean = true;
 
-  private _observer: IntersectionObserver;
-  isVisible = false;
-
-  constructor(private el: ElementRef) {
-    this._skills$ = new Observable<any[]>();
-    this.skills = [];
-
-    this._observer = new IntersectionObserver((entries) => {
-      entries.forEach( entry => {
-        console.log(entry);
-        if (entry.isIntersecting === true) {
-          this.isVisible = true;
-          this._observer.unobserve(this.el.nativeElement as HTMLElement);
-          this._observer.disconnect();
-        }
-      });
-    }, {root: document.querySelector("#skills")});
+  constructor() {
+    this._skills$ = new Observable<Skill[]>();
+    this._subscription = new Subscription();
   }
 
   ngOnInit(): void {
-    this._skills$.subscribe((skills) => {
-      this.loading = true;
-      this.skills = skills;
+    this._subscription = this._skills$.subscribe(() => {
       this.loading = false;
     });
   }
-  
-  ngAfterViewInit() {
-    this._observer.observe(this.el.nativeElement as HTMLElement);
+
+  ngOnDestroy(): void {
+    if (this._subscription) this._subscription.unsubscribe();
   }
 
+  get skills$(): Observable<Skill[]> {
+    return this._skills$;
+  }
 }
