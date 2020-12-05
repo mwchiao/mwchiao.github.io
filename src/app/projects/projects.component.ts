@@ -1,5 +1,6 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
+import { Project } from '../data-interfaces';
 
 @Component({
   selector: 'app-projects',
@@ -8,13 +9,13 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ProjectsComponent implements OnInit {
 
-  @Input() private _projects$: Observable<any[]>;
+  @Input() private _projects$: Observable<Project[]>;
   private _subscription: Subscription;
 
   loading: boolean = true;
 
   constructor() { 
-    this._projects$ = new Observable<any[]>();
+    this._projects$ = new Observable<Project[]>();
     this._subscription = new Subscription();
   }
 

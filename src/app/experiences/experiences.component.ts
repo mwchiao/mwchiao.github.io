@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Job } from '../data-interfaces';
 
 @Component({
   selector: 'app-experiences',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ExperiencesComponent implements OnInit {
   private PAGINATION_LIMIT = 5;
 
-  @Input() private _jobs$: Observable<any[]>;
+  @Input() private _jobs$: Observable<Job[]>;
   jobs: any[];
   currentJobIndex: number = 0;
 
@@ -20,7 +21,7 @@ export class ExperiencesComponent implements OnInit {
   loading: boolean = true;
   
   constructor() {
-    this._jobs$ = new Observable<any[]>();
+    this._jobs$ = new Observable<Job[]>();
     this.jobs = [];
   }
 

@@ -24,7 +24,12 @@
                             <span class="text-success">@ {{jobs[currentJobIndex].company}}</span>
                         </div>
                         <p class="text-info mb-0" style="font-size: 15.5px">{{jobs[currentJobIndex].company}} - {{jobs[currentJobIndex].department}}</p>
-                        <p style="font-size: 14px;">{{jobs[currentJobIndex].start}} - {{jobs[currentJobIndex].end}}</p>
+                        <p *ngIf="!jobs[currentJobIndex].current" style="font-size: 14px;">
+                            {{jobs[currentJobIndex].start.toDate() | date: 'MMMM y'}} - {{jobs[currentJobIndex].end.toDate() | date: 'MMMM y'}}
+                        </p>
+                        <p *ngIf="jobs[currentJobIndex].current" style="font-size: 14px;">
+                            {{jobs[currentJobIndex].start.toDate() | date: 'MMMM y'}} - Present
+                        </p>
                         <p>{{jobs[currentJobIndex].description}}</p>
                     </div>
                 </div>

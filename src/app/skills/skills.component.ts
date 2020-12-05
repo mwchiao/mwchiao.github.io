@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
+import { Skill } from '../data-interfaces';
 
 @Component({
   selector: 'app-skills',
@@ -9,21 +10,17 @@ import { Observable, Subscription } from 'rxjs';
 
 export class SkillsComponent implements OnInit, OnDestroy {
 
-  @Input() private _skills$: Observable<any[]>;
+  @Input() private _skills$: Observable<Skill[]>;
   private _subscription: Subscription;
-  skills: any[];
   loading: boolean = true;
 
   constructor() {
-    this._skills$ = new Observable<any[]>();
-    this.skills = [];
+    this._skills$ = new Observable<Skill[]>();
     this._subscription = new Subscription();
   }
 
   ngOnInit(): void {
-    this._subscription = this._skills$.subscribe((skills) => {
-      this.loading = true;
-      this.skills = skills;
+    this._subscription = this._skills$.subscribe(() => {
       this.loading = false;
     });
   }
@@ -32,4 +29,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
     if (this._subscription) this._subscription.unsubscribe();
   }
 
+  get skills$(): Observable<Skill[]> {
+    return this._skills$;
+  }
 }
