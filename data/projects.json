@@ -1,48 +1,50 @@
 [
     {
-        "name": "",
-        "status": "",
-        "description": "",
+        "name": "Project 1",
+        "status": 1,
+        "description": "description here",
         "stack": [
-            "",
-            "",
-            ""
+            "Angular",
+            "Bootstrap",
+            "Typescript",
+            "something",
+            "something"
         ],
-        "source": "",
+        "source": "https://github.com/mwchiao/",
         "weight": 1
     },
     {
-        "name": "",
-        "status": "",
-        "description": "",
+        "name": "Project 2",
+        "status": 0,
+        "description": "description 2",
         "stack": [
-            "",
-            "",
-            ""
+            "1",
+            "2",
+            "3"
         ],
         "source": "",
         "weight": 0
     },
     {
-        "name": "",
-        "status": "",
-        "description": "",
+        "name": "Project 3",
+        "status": 0,
+        "description": "desciption 3",
         "stack": [
-            "",
-            "",
-            ""
+            "2",
+            "2",
+            "3"
         ],
         "source": "",
         "weight": 0
     },
     {
-        "name": "",
-        "status": "",
-        "description": "",
+        "name": "Project 4",
+        "status": 0,
+        "description": "description 4",
         "stack": [
-            "",
-            "",
-            ""
+            "1",
+            "2",
+            "3"
         ],
         "source": "",
         "weight": 0

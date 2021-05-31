@@ -3,10 +3,10 @@ function experienceHandler(experiences) {
     experiences.sort((a, b) => {
         const dateA = new Date(a.start.year, a.start.monthIndex);
         const dateB = new Date(b.start.year, b.start.monthIndex);
-        
+
         return dateB - dateA;
     });
-    
+
     populateExperiences(experiences);
 }
 
@@ -20,8 +20,7 @@ function projectsHandler(projects) {
 function skillsHandler(skills) {
     // Sort by descending proficiency
     skills.sort((a, b) => b.proficiency - a.proficiency);
-    
-    
+
     populateSkills(skills);
 }
 
@@ -38,6 +37,124 @@ function check(response) {
     }
 }
 
+function populateExperiences(experiences) {
+    const section = document.getElementById("experience-group");
+
+    experiences.forEach((experience, index) => {
+        const start = experience.start.month + " " + experience.start.year;
+        const end = (experience.end) ? experience.end.month + " " + experience.end.year : "Present";
+
+        const experienceId = "experience-" + index;
+        const headingId = "experience-heading-" + index;
+
+        let ariaExpanded = "";
+        let collapseClass = "";
+        let buttonClass= "";
+
+        if (index == 0) {
+            ariaExpanded = "true";
+            collapseClass = "show";
+            buttonClass = "";
+        }
+        else {
+            ariaExpanded = "false";
+            collapseClass = "";
+            buttonClass = "collapsed";
+        }
+
+        let html = "";
+        html += "<div class=\"accordion-item\">";
+        html += "<h2 class=\"accordion-header\" id=\"" + headingId + "\">";
+        html += "<button class=\"accordion-button " + buttonClass + "\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#" + experienceId + "\" aria-expanded=\"" + ariaExpanded + "\" aria-controls=\"" + experienceId + "\">";
+        html += experience.position + " @ " + experience.company;
+        html += "</button>";
+        html += "</h2>";
+        html += "<div id=\"experience-" + index + "\" class=\"accordion-collapse collapse " + collapseClass + "\" aria-labelledby=\"" + headingId + "\">";
+        html += "<div class=\"accordion-body\">";
+        html += "<p class=\"card-text text-secondary mb-0\">";
+        html += experience.company + " - " + experience.department;
+        html += "</p>";
+        html += "<p class=\"card-text\">";
+        html += "<small class=\"text-muted\">" + start + " - " + end + "</small>";
+        html += "</p>";
+        html += "<p class=\"card-text\">";
+        html += experience.description;
+        html += "</p>";
+        html += "</div>";
+        html += "</div>";
+        html += "</div>";
+
+        section.innerHTML += html;
+    });
+}
+
+function populateProjects(projects) {
+    const section = document.getElementById("project-cards");
+
+    projects.forEach(project => {
+        const status = project.status ? "Complete" : "On-going";
+        const color = project.status ? "success" : "primary";
+
+        let stack = "";
+        project.stack.forEach(tech => {
+            console.log(tech);
+            stack += "<span class=\"badge text-dark\">" + tech + "</span>";
+        });
+
+        let html = "";
+        html += "<div class=\"col\">";
+        html += "<div class=\"card\">";
+        html += "<div class=\"card-body\">";
+        html += "<h5 class=\"card-title\">" + project.name + "</h5>";
+        html += "<span class=\"badge bg-" + color + " rounded-pill mb-3\">" + status + "</span>";
+        html += "<p class=\"card-text\">" + project.description + "</p>";
+        html += "<div>";
+        html += "<div class=\"d-flex\">";
+        html += "<span class=\"bi bi-stack\"></span>";
+        html += "<div class=\"d-inline-block\">" + stack + "</div>";
+        html += "</div>";
+        html += "</div>";
+        html += "</div>";
+        html += "<div class=\"card-footer\">";
+        html += "<a class=\"card-link\" href=\"" + project.source + "\" target=\"_blank\"><span style=\"margin-right: 0.5rem !important;\" class=\"bi bi-github\"></span>Source</a>";
+        html += "</div>";
+        html += "</div>";
+        html += "</div>";
+
+        section.innerHTML += html;
+    });
+}
+
+function populateSkills(skills) {
+    const section = document.getElementById("skills-list");
+
+    skills.forEach(skill => {
+        let proficiency = "";
+        let color = "";
+
+        if (skill.proficiency >= 2.0) {
+            proficiency = "Expert";
+            color = "success";
+        }
+        else if (skill.proficiency >= 1.0) {
+            proficiency = "Proficient";
+            color = "warning";
+        }
+        else {
+            proficiency = "Beginner";
+            color = "primary"
+        }
+
+        let html = "";
+        html += "<li class=\"list-group-item d-flex flex-fill justify-content-between align-items-center\">";
+        html += "<span class=\"fw-bold\">" + skill.name + "</span>";
+        html += "<span class=\"badge bg-" + color + " rounded-pill\">" + proficiency + "</span>";
+        html += "</li>";
+
+        section.innerHTML += html;
+    });
+}
+
 function loadData(file, handler) {
     const URL_BASE = "http://localhost:5500/data/";
     const url = URL_BASE + file;
@@ -46,30 +163,6 @@ function loadData(file, handler) {
         .then(check)
         .then(handler)
         .catch(errorHandler);
-}
-
-function populateExperiences(experiences) {
-    const section = document.getElementById("experiences");
-
-    experiences.forEach(experience => {
-        // Do something
-    });
-}
-
-function populateProjects(projects) {
-    const section = document.getElementById("projects");
-
-    projects.forEach(project => {
-        // Do something
-    });
-}
-
-function populateSkills(skills) {
-    const section = document.getElementById("skills");
-
-    skills.forEach(skill => {
-        // Do something
-    });
 }
 
 function init() {
