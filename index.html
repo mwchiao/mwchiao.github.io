@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <script src="script.js" defer></script>
+    <title>Maxim Chiao | Software Engineer</title>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>About me</h2>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-3 d-flex justify-content-center align-items-center p-2">
+                    <img id="pfp" src="images/pfp.png" alt="A selfie of Maxim in a minimalist style"
+                        class="rounded-circle shadow">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Experience</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                        collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes control the
+                        overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                        this with custom CSS or overriding our default variables. It's also worth noting that just about
+                        any
+                        HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that
+                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
+                        limit
+                        overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that
+                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
+                        limit
+                        overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Projects</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Skills</h2>
+        <ul class="list-group">
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                <span class="fw-bold">Typescript</span>
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                Swift
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                Python
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                ServiceNow
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                Javascript
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                C/C++
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                Angular
+                <span class="badge bg-warning rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                Go
+                <span class="badge bg-primary rounded-pill">Beginner</span>
+            </li>
+            <li class="list-group-item d-flex flex-fill justify-content-between align-items-center">
+                Go
+                <span class="badge bg-info rounded-pill">Beginner</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="d-flex justify-content-center align-items-center mt-3 font-monospace border-top">
+        My with ♥️ by Maxim
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
