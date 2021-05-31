@@ -1,52 +1,48 @@
 [
     {
-        "name": "Project 1",
-        "status": 1,
-        "description": "description here",
+        "name": "maxim-blog.netlify.app",
+        "status": 0,
+        "description": "A simple blog site demo. Demonstrates the look and feel of my blog project",
         "stack": [
             "Angular",
             "Bootstrap",
-            "Typescript",
-            "something",
-            "something"
+            "Firebase"
         ],
-        "source": "https://github.com/mwchiao/",
+        "source": "https://github.com/mwchiao/maxim-blog",
         "order": 1
     },
     {
-        "name": "Project 2",
+        "name": "maximchiao.me",
         "status": 0,
-        "description": "description 2",
+        "description": "It's what you are looking at right now! My personal website/portfolio.",
         "stack": [
-            "1",
-            "2",
-            "3"
+            "Javascript",
+            "Bootstrap",
+            "HTML"
         ],
-        "source": "",
+        "source": "https://github.com/mwchiao/mwchiao.github.io",
+        "order": 2
+    },
+    {
+        "name": "FREDL The Anti-bot CAPTCHA",
+        "status": 1,
+        "description": "The final project for ECS153: Computer Security. We used Python and TensorFlow to train adversarial examples to fool ML CAPTCHA bots.",
+        "stack": [
+            "Python",
+            "TensorFlow"
+        ],
+        "source": "https://github.com/ECS153/final-project-the-flintstones",
         "order": 0
     },
     {
-        "name": "Project 3",
-        "status": 0,
-        "description": "desciption 3",
+        "name": "DavisHeatMap",
+        "status": 1,
+        "description": "A Python app that displays how densely populated a given building is on campus at a given time. Created during HackDavis 2018. I worked on this as a contributor.",
         "stack": [
-            "2",
-            "2",
-            "3"
+            "Python",
+            "Folium"
         ],
-        "source": "",
-        "order": 0
-    },
-    {
-        "name": "Project 4",
-        "status": 0,
-        "description": "description 4",
-        "stack": [
-            "1",
-            "2",
-            "3"
-        ],
-        "source": "",
+        "source": "https://github.com/DylonDickinson/hackDavis",
         "order": 0
     }
 ]

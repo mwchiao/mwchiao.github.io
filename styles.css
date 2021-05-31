@@ -11,6 +11,10 @@ footer {
     width: 180px;
 }
 
+.accordion-button, .list-group-item {
+    font-weight: 500;
+}
+
 .bi {
     margin-right: 0.5rem;
 }
