@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Typescript",
+        "proficiency": 1
+    },
+    {
+        "name": "Swift",
+        "proficiency": 0
+    },
+    {
+        "name": "Python",
+        "proficiency": 1
+    },
+    {
+        "name": "ServiceNow",
+        "proficiency": 1.2
+    },
+    {
+        "name": "Javascript",
+        "proficiency": 1
+    },
+    {
+        "name": "C/C++",
+        "proficiency": 1
+    },
+    {
+        "name": "Angular",
+        "proficiency": 1
+    },
+    {
+        "name": "Go",
+        "proficiency": 0
+    }
+]

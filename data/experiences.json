@@ -1,0 +1,82 @@
+[
+    {
+        "position": "",
+        "company": "",
+        "department": "",
+        "start": {
+            "year": 2021,
+            "month": "",
+            "monthIndex": 1
+        },
+        "end": {
+            "year": "",
+            "month": "",
+            "monthIndex": ""
+        },
+        "description": ""
+    },
+    {
+        "position": "",
+        "company": "",
+        "department": "",
+        "start": {
+            "year": 2020,
+            "month": "",
+            "monthIndex": 9
+        },
+        "end": {
+            "year": "",
+            "month": "",
+            "monthIndex": ""
+        },
+        "description": ""
+    },
+    {
+        "position": "",
+        "company": "",
+        "department": "",
+        "start": {
+            "year": 2020,
+            "month": "",
+            "monthIndex": 0
+        },
+        "end": {
+            "year": "",
+            "month": "",
+            "monthIndex": ""
+        },
+        "description": ""
+    },
+    {
+        "position": "",
+        "company": "",
+        "department": "",
+        "start": {
+            "year": 2018,
+            "month": "",
+            "monthIndex": 1
+        },
+        "end": {
+            "year": "",
+            "month": "",
+            "monthIndex": ""
+        },
+        "description": ""
+    },
+    {
+        "position": "",
+        "company": "",
+        "department": "",
+        "start": {
+            "year": 2019,
+            "month": "",
+            "monthIndex": 5
+        },
+        "end": {
+            "year": "",
+            "month": "",
+            "monthIndex": ""
+        },
+        "description": ""
+    }
+]
