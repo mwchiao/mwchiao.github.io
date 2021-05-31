@@ -156,7 +156,7 @@ function populateSkills(skills) {
 }
 
 function loadData(file, handler) {
-    const URL_BASE = "http://localhost:5500/data/";
+    const URL_BASE = "https://maximchiao.me/data/";
     const url = URL_BASE + file;
 
     fetch(url)
