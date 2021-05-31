@@ -24,8 +24,12 @@ function skillsHandler(skills) {
     populateSkills(skills);
 }
 
-function errorHandler(err) {
-    // Do something
+function errorHandler(err, file) {
+    console.error(file + "\n" + err);
+
+    const errorAlert = document.getElementById("errorAlert");
+    errorAlert.classList.replace("d-none", "show");
+    errorAlert.setAttribute("aria-hidden", "false");
 }
 
 function check(response) {
@@ -97,7 +101,6 @@ function populateProjects(projects) {
 
         let stack = "";
         project.stack.forEach(tech => {
-            console.log(tech);
             stack += "<span class=\"badge text-dark\">" + tech + "</span>";
         });
 
@@ -162,7 +165,7 @@ function loadData(file, handler) {
     fetch(url)
         .then(check)
         .then(handler)
-        .catch(errorHandler);
+        .catch(err => { errorHandler(err, file) });
 }
 
 function init() {
