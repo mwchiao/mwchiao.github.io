@@ -11,8 +11,8 @@ function experienceHandler(experiences) {
 }
 
 function projectsHandler(projects) {
-    // Sort by descending weight
-    projects.sort((a, b) => b.weight - a.weight);
+    // Sort by descending order
+    projects.sort((a, b) => b.order - a.order);
 
     populateProjects(projects);
 }
@@ -42,7 +42,7 @@ function populateExperiences(experiences) {
 
     experiences.forEach((experience, index) => {
         const start = experience.start.month + " " + experience.start.year;
-        const end = (experience.end) ? experience.end.month + " " + experience.end.year : "Present";
+        const end = experience.end.year ? experience.end.month + " " + experience.end.year : "Present";
 
         const experienceId = "experience-" + index;
         const headingId = "experience-heading-" + index;
@@ -109,14 +109,14 @@ function populateProjects(projects) {
         html += "<span class=\"badge bg-" + color + " rounded-pill mb-3\">" + status + "</span>";
         html += "<p class=\"card-text\">" + project.description + "</p>";
         html += "<div>";
-        html += "<div class=\"d-flex\">";
+        html += "<div class=\"d-flex\" aria-label=\"" + project.name + "\'s tech stack\">";
         html += "<span class=\"bi bi-stack\"></span>";
         html += "<div class=\"d-inline-block\">" + stack + "</div>";
         html += "</div>";
         html += "</div>";
         html += "</div>";
         html += "<div class=\"card-footer\">";
-        html += "<a class=\"card-link\" href=\"" + project.source + "\" target=\"_blank\"><span style=\"margin-right: 0.5rem !important;\" class=\"bi bi-github\"></span>Source</a>";
+        html += "<a class=\"card-link\" href=\"" + project.source + "\" target=\"_blank\"><span style=\"margin-right: 0.5rem !important;\" class=\"bi bi-github\"></span>Source code</a>";
         html += "</div>";
         html += "</div>";
         html += "</div>";
@@ -147,7 +147,7 @@ function populateSkills(skills) {
 
         let html = "";
         html += "<li class=\"list-group-item d-flex flex-fill justify-content-between align-items-center\">";
-        html += "<span class=\"fw-bold\">" + skill.name + "</span>";
+        html += skill.name;
         html += "<span class=\"badge bg-" + color + " rounded-pill\">" + proficiency + "</span>";
         html += "</li>";
 

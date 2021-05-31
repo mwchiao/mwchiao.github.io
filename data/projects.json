@@ -11,7 +11,7 @@
             "something"
         ],
         "source": "https://github.com/mwchiao/",
-        "weight": 1
+        "order": 1
     },
     {
         "name": "Project 2",
@@ -23,7 +23,7 @@
             "3"
         ],
         "source": "",
-        "weight": 0
+        "order": 0
     },
     {
         "name": "Project 3",
@@ -35,7 +35,7 @@
             "3"
         ],
         "source": "",
-        "weight": 0
+        "order": 0
     },
     {
         "name": "Project 4",
@@ -47,6 +47,6 @@
             "3"
         ],
         "source": "",
-        "weight": 0
+        "order": 0
     }
 ]
