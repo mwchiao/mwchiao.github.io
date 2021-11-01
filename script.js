@@ -159,7 +159,7 @@ function populateSkills(skills) {
 }
 
 function loadData(file, handler) {
-    const URL_BASE = "https://maximchiao.me/data/";
+    const URL_BASE = "https://chiao.dev/data/";
     const url = URL_BASE + file;
 
     fetch(url)
