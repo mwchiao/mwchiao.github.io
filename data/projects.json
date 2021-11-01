@@ -12,7 +12,7 @@
         "order": 1
     },
     {
-        "name": "maximchiao.me",
+        "name": "chiao.dev",
         "status": 0,
         "description": "It's what you are looking at right now! My personal website/portfolio.",
         "stack": [
@@ -24,7 +24,7 @@
         "order": 2
     },
     {
-        "name": "FREDL The Anti-bot CAPTCHA",
+        "name": "FRED The Anti-bot CAPTCHA",
         "status": 1,
         "description": "The final project for ECS153: Computer Security. We used Python and TensorFlow to train adversarial examples to fool ML CAPTCHA bots.",
         "stack": [
