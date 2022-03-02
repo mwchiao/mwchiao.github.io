@@ -1,7 +1,7 @@
 [
     {
-        "name": "maxim-blog.netlify.app",
-        "status": 0,
+        "name": "Blog demo",
+        "status": 1,
         "description": "A simple blog site demo. Demonstrates the look and feel of my blog project",
         "stack": [
             "Angular",
