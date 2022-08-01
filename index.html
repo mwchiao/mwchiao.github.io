@@ -2,98 +2,260 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="styles.css" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <script src="script.js" defer></script>
-    <title>Maxim Chiao | Software Engineer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Maxim Chiao | Software Developer</title>
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow mb-4">
-        <div class="container">
-            <a class="navbar-brand font-monospace" href="#">./chiao.dev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
+<body>
+    <header class="nav-header">
+        <nav class="navigation">
+            <div class="nav-container">
+                <a class="brand-link" href="#home">./chiao.dev</a>
+                <button type="button" class="toggle-button" onclick="toggleNavLinks()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <div class="links">
+                <ul class="nav-links">
+                    <li class="nav-link"><a href="#about">About</a></li>
+                    <li class="nav-link"><a href="#experience">Experience</a></li>
+                    <li class="nav-link"><a href="#projects">Projects</a></li>
+                    <li class="nav-link"><a href="#skills">Skills</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <div class="container">
-        <div id="errorAlert" class="alert alert-danger d-none" role="alert" aria-hidden="true">
-            <strong>Uh oh...</strong> Something went wrong, try reloading the page.
-        </div>
-        <h1 id="about">About me</h1>
-        <div class="card mb-3">
-            <div class="row g-0">
-                <div class="col-md-3 d-flex justify-content-center align-items-center p-2">
-                    <img id="pfp" src="images/pfp.png" alt="A selfie of Maxim in a minimalist style"
-                        class="rounded-circle shadow">
+    <main>
+        <section class="content" id="home" style="background-color:aliceblue">
+            <div class="content-container">
+                <div>
+                    <h1>Hello, world. My name is</h1>
+                    <h2>Maxim Chiao.</h2>
+                    <h3>I am a software developer based out of California.</h3>
+                    <p>ServiceNow developer and aspiring web and mobile developer.</p>
+                    <footer>
+                        Connect with me:
+                        <a href="https://github.com/mwchiao" target="_blank" rel="noopener noreferrer"
+                            class="external">GitHub</a>
+                        <a href="https://www.linkedin.com/in/mwchiao/" target="_blank" rel="noopener noreferrer"
+                            class="external">LinkedIn</a>
+                    </footer>
                 </div>
-                <div class="col-md-9">
-                    <div class="card-body">
-                        <h5 class="card-title">A little about myself</h5>
-                        <p class="card-text">Hello everyone, my name is Maxim (he/him/his) and I am a software engineer
-                            and a UC Davis alumnus.</p>
-                        <p class="card-text">My area of expertise is ServiceNow but I have also dabbled with different
-                            technologies. I am particularly interested in mobile/app development, but Webdev tickles my
-                            fancy at times as well.</p>
-                        <p class="card-text">Outside of development work, I enjoy tennis, playing instruments (though I
-                            am nowhere near qualified enough to be considered a 'musician' 😂), and I am trying to make
-                            cycling my next hobby.</p>
-                        <p class="card-text fw-bolder">Find me online:</p>
-                        <a class="card-link" href="https://github.com/mwchiao" target="_blank"><span
-                                class="bi bi-github"></span>Github</a>
-                        <a class="card-link" href="https://www.linkedin.com/in/mwchiao/" target="_blank"><span
-                                class="bi bi-linkedin"></span>LinkedIn</a>
+                <div class="img-container">
+                    <img src="images/pfp.png" alt="A selfie of Maxim rendered in a minimalist style">
+                </div>
+            </div>
+        </section>
+        <section class="content" id="about" style="background-color: aquamarine;">
+            <div>
+                <h1>About me</h1>
+                <div>
+                    <p>something else is here Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                        perspiciatis a adipisci ea. Sapiente culpa, voluptas officiis corporis perspiciatis,
+                        adipisci perferendis dignissimos laudantium laborum accusamus non explicabo ab voluptatem
+                        porro!</p>
+                </div>
+            </div>
+        </section>
+        <section class="content" id="experience" style="background-color: lightgoldenrodyellow;">
+            <div>
+                <h1>Work Experience</h1>
+                <div class="jobs-tab-container">
+                    <div class="jobs-tab-list" role="tablist">
+                        <button class="jobs-tab active" id="tab-0" onclick="onTabClick(event, 0)"
+                            role="tab">Deloitte</button>
+                        <button class="jobs-tab" id="tab-1" onclick="onTabClick(event, 1)" role="tab">UC
+                            Davis</button>
+                        <button class="jobs-tab" id="tab-2" onclick="onTabClick(event, 2)" role="tab">UC Davis</button>
+                    </div>
+                    <div class="jobs-tab-content">
+                        <div id="panel-0" class="job-content active" role="tabpanel">
+                            <h3>
+                                <span class="position">Position 0</span>
+                                <span class="company">@ Company 0</span>
+                            </h3>
+                            <p>Feb. 2021 - Present</p>
+                            <ul class="job-description">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                        </div>
+                        <div id="panel-1" class="job-content" role="tabpanel">
+                            <h3>
+                                <span class="position">Position 1</span>
+                                <span class="company">@ Company 1</span>
+                            </h3>
+                            <p>Feb. 2021 - Present</p>
+                            <ul class="job-description">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                        </div>
+                        <div id="panel-2" class="job-content" role="tabpanel">
+                            <h3>
+                                <span class="position">Position 2</span>
+                                <span class="company">@ Company 2</span>
+                            </h3>
+                            <p>Feb. 2021 - Present</p>
+                            <ul class="job-description">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <h1 id="experience">Experience</h1>
-        <div class="accordion" id="experience-group"></div>
-        <h1 id="projects">Projects</h1>
-        <div id="project-cards" class="row row-cols-1 row-cols-md-3 g-4"></div>
-        <h1 id="skills">Skills</h1>
-        <ul id="skills-list" class="list-group"></ul>
-    </div>
+        </section>
+        <section class="content" id="projects" style="background-color: pink;">
+            <div>
+                <h1>Personal Projects</h1>
+                <ul class="grid-list">
+                    <li>
+                        <div class="project">
+                            <header>
+                                <div class="project-links">
+                                    <a href="https://github.com/mwchiao/mwchiao.github.io" target="_blank"
+                                        rel="noopener noreferrer" class="external">
+                                        Source code
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="https://github.com/mwchiao/mwchiao.github.io" target="_blank"
+                                        rel="noopener noreferrer" class="external">
+                                        Project 0
+                                    </a>
+                                </h3>
+                            </header>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore ipsum, voluptates
+                                iusto officia debitis impedit eos eius ratione molestiae est ab quisquam ullam illum
+                                voluptas rerum! Ipsam, velit ipsa.</p>
+                            <footer>
+                                <ul class="tech-stack">
+                                    <li>one</li>
+                                    <li>two</li>
+                                    <li>three</li>
+                                </ul>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="project">
+                            <header>
+                                <div class="project-links">
+                                    <a href="https://github.com/mwchiao/mwchiao.github.io" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Source code
+                                    </a>
+                                </div>
+                                <h3>Project 1</h3>
+                            </header>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore ipsum, voluptates
+                                iusto officia debitis impedit eos eius ratione molestiae est ab quisquam ullam illum
+                                voluptas rerum! Ipsam, velit ipsa.</p>
+                            <footer>
+                                <ul class="tech-stack">
+                                    <li>one</li>
+                                    <li>two</li>
+                                    <li>three</li>
+                                </ul>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="project">
+                            <header>
+                                <div class="project-links">
+                                    <a href="https://github.com/mwchiao/mwchiao.github.io" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Source code
+                                    </a>
+                                </div>
+                                <h3>Project 2</h3>
+                            </header>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore ipsum, voluptates
+                                iusto officia debitis impedit eos eius ratione molestiae est ab quisquam ullam illum
+                                voluptas rerum! Ipsam, velit ipsa.</p>
+                            <footer>
+                                <ul class="tech-stack">
+                                    <li>one</li>
+                                    <li>two</li>
+                                    <li>three</li>
+                                </ul>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="project">
+                            <header>
+                                <div class="project-links">
+                                    <a href="https://github.com/mwchiao/mwchiao.github.io" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Source code
+                                    </a>
+                                </div>
+                                <h3>Project 3</h3>
+                            </header>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore ipsum, voluptates
+                                iusto officia debitis impedit eos eius ratione molestiae est ab quisquam ullam illum
+                                voluptas rerum! Ipsam, velit ipsa.</p>
+                            <footer>
+                                <ul class="tech-stack">
+                                    <li>one</li>
+                                    <li>two</li>
+                                    <li>three</li>
+                                </ul>
+                            </footer>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="content" id="skills" style="background-color: lavender;">
+            <div>
+                <h1>Skills</h1>
+                <ul class="grid-list">
+                    <li>
+                        <div class="skill">
+                            <span class="skill-name">Skill 0</span>
+                            <span class="proficiency">Expert</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill">
+                            <span class="skill-name">Skill 1</span>
+                            <span class="proficiency">Proficient</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill">
+                            <span class="skill-name">Skill 2</span>
+                            <span class="proficiency">Beginner</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill">
+                            <span class="skill-name">Skill 3</span>
+                            <span class="proficiency">New</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-    <footer class="d-flex justify-content-center align-items-center mt-3 font-monospace border-top">
+    <footer class="footer">
         Made with ♥️ by Maxim
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
