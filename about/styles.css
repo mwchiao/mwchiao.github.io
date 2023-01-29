@@ -1,0 +1,10 @@
+h1 {
+    color: var(--accent-pink);
+}
+
+img {
+    max-height: 25vh;
+    max-width: 100%;
+    border: 2px solid var(--accent-pink);
+    border-radius: 0.5rem;
+}

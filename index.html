@@ -2,98 +2,69 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="styles.css" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <script src="script.js" defer></script>
-    <title>Maxim Chiao | Software Engineer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Maxim Chiao | Software Developer</title>
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow mb-4">
-        <div class="container">
-            <a class="navbar-brand font-monospace" href="#">./chiao.dev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<body>
     <div class="container">
-        <div id="errorAlert" class="alert alert-danger d-none" role="alert" aria-hidden="true">
-            <strong>Uh oh...</strong> Something went wrong, try reloading the page.
-        </div>
-        <h1 id="about">About me</h1>
-        <div class="card mb-3">
-            <div class="row g-0">
-                <div class="col-md-3 d-flex justify-content-center align-items-center p-2">
-                    <img id="pfp" src="images/pfp.png" alt="A selfie of Maxim in a minimalist style"
-                        class="rounded-circle shadow">
+        <main>
+            <section class="full-page">
+                <div>
+                    <h1 class="welcome">
+                        <span class="welcome-text">Hello, world!</span>
+                        <span class="welcome-text">My name is Maxim Chiao.</span>
+                    </h1>
+                    <p>I'm a software developer. I make things and satisfy my curiosity through code.</p>
+                    <a href="#check-me-out">Check me out! <span class="pointer">👇</span></a>
                 </div>
-                <div class="col-md-9">
-                    <div class="card-body">
-                        <h5 class="card-title">A little about myself</h5>
-                        <p class="card-text">Hello everyone, my name is Maxim (he/him/his) and I am a software engineer
-                            and a UC Davis alumnus.</p>
-                        <p class="card-text">My area of expertise is ServiceNow but I have also dabbled with different
-                            technologies. I am particularly interested in mobile/app development, but Webdev tickles my
-                            fancy at times as well.</p>
-                        <p class="card-text">Outside of development work, I enjoy tennis, playing instruments (though I
-                            am nowhere near qualified enough to be considered a 'musician' 😂), and I am trying to make
-                            cycling my next hobby.</p>
-                        <p class="card-text fw-bolder">Find me online:</p>
-                        <a class="card-link" href="https://github.com/mwchiao" target="_blank"><span
-                                class="bi bi-github"></span>Github</a>
-                        <a class="card-link" href="https://www.linkedin.com/in/mwchiao/" target="_blank"><span
-                                class="bi bi-linkedin"></span>LinkedIn</a>
-                    </div>
+            </section>
+            <section id="check-me-out" class="full-page">
+                <div>
+                    <h2>Check me out.</h2>
+                    <p>See who I am, what I've done, and what I'm up to.</p>
+                    <nav>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="/about">About me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/work">Work experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/projects">Projects</a>
+                            </li>
+                        </ul>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="https://github.com/mwchiao" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="external-link">
+                                    Github
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.linkedin.com/in/mwchiao/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="external-link">
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
-        </div>
-        <h1 id="experience">Experience</h1>
-        <div class="accordion" id="experience-group"></div>
-        <h1 id="projects">Projects</h1>
-        <div id="project-cards" class="row row-cols-1 row-cols-md-3 g-4"></div>
-        <h1 id="skills">Skills</h1>
-        <ul id="skills-list" class="list-group"></ul>
+            </section>
+        </main>
     </div>
 
-    <footer class="d-flex justify-content-center align-items-center mt-3 font-monospace border-top">
-        Made with ♥️ by Maxim
+    <footer class="footer">
+        <span>Made with ♥️ by Maxim</span>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>
