@@ -49,8 +49,8 @@ a.external::after {
 }
 
 .window, .nav-bar {
-    width: min(95rem, 100vw);
-    padding: 1rem;
+    max-width: min(95rem, 100vw);
+    padding-block: 1rem;
 }
 
 .nav-bar {
@@ -59,6 +59,7 @@ a.external::after {
     top: 0;
     margin-block-start: 1rem;
     padding-block: 0;
+    width: 100%;
 }
 
 .cmd-line span {
