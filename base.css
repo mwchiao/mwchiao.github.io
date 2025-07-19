@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--background);
 }
 
 body {
@@ -50,15 +51,16 @@ a.external::after {
 
 .window, .nav-bar {
     max-width: min(95rem, 100vw);
-    padding-block: 1rem;
+    padding-block-start: 0.5rem;
+    padding-block-end: 1rem;
 }
 
 .nav-bar {
     background-color: inherit;
     position: sticky;
     top: 0;
-    margin-block-start: 1rem;
-    padding-block: 0;
+    padding-block-start: 1rem;
+    padding-block-end: 0.5rem;
     width: 100%;
 }
 
