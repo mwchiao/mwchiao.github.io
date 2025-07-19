@@ -6,21 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="nav-header">
-            <a href="/" class="home-link">../chiao.dev</a>
+    <div class="nav-bar">
+        <div>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                ls . 
+            </div>
+        </div>
+        <nav>
+            <ul class="directory">
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about me</a></li>
+                <li><a href="/work">work experience</a></li>
+                <li><a href="/projects">projects</a></li>
+            </ul>
         </nav>
-        <main class="full-page">
-            <div>
-                <h1>About Me</h1>
-                
-                <p>Hi there, my name is Maxim (he/him/his) and I am a software engineer!</p>
-                <p>My current area of expertise is ServiceNow, but I have dabbled with and am learning different technologies/languages. In particular, web development. Though mobile/app development is also an interest of mine.</p>
-                <p>Outside of development, I am learning how to improve my cooking skills and am trying to become an avid cyclist.</p>
-                <p>Feel free to connect with me on <a href="https://www.linkedin.com/in/mwchiao/" target="_blank" rel="noopener noreferrer" class="external-link">LinkedIn</a>!</p>
+    </div>
+    <div class="window">
+        <main>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                cd about
+            </div>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">about</span> <span class="prompt-symbol">$ </span>
+                cat about_me
+            </div>
+            <h1>about me</h1>
+            <p>My name is Maxim (he/him/his) and I am a software engineer!</p>
+            <p>Professionally, I started out front-end development and working within the ServiceNow ecosystem, but have since moved more behind the scenes and have started focusing working with Docker, Jenkins, and writing custom tooling and scripts to make life easier. In general, I really enjoy process automation and solving for those day-to-day inefficiencies that add up over time.</p>
+            <p>I want to learn more about back-end development and DevOps too!</p>
+            <p>Outside of software development, I enjoy cooking, birding, and going to the gym. I haven't thought of any ideas yet, but I would like to combine coding with those various hobbies somehow -- where it makes sense.</p>
+            <p>Connect with me with on <a class="external" href="https://www.linkedin.com/in/mwchiao">LinkedIn</a> and check out my <a class="external" href="https://github.com/mwchiao">GitHub</a>.</p>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">about</span> <span class="prompt-symbol">$ </span>
+                <span class="cursor">&#9608;</span>
             </div>
         </main>
     </div>

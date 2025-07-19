@@ -6,63 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="styles.css">
     <title>Maxim Chiao | Software Developer</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="nav-bar">
+        <div>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                ls . 
+            </div>
+        </div>
+        <nav>
+            <ul class="directory">
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about me</a></li>
+                <li><a href="/work">work experience</a></li>
+                <li><a href="/projects">projects</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="window">
         <main>
-            <section class="full-page">
-                <div>
-                    <h1 class="welcome">
-                        <span class="welcome-text">Hello, world!</span>
-                        <span class="welcome-text">My name is Maxim Chiao.</span>
-                    </h1>
-                    <p>I'm a software developer. I make things and satisfy my curiosity through code.</p>
-                    <a href="#check-me-out">Check me out! <span class="pointer">👇</span></a>
-                </div>
-            </section>
-            <section id="check-me-out" class="full-page">
-                <div>
-                    <h2>Check me out.</h2>
-                    <p>See who I am, what I've done, and what I'm up to.</p>
-                    <nav>
-                        <ul class="nav-list">
-                            <li class="nav-item">
-                                <a href="/about">About me</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/work">Work experience</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/projects">Projects</a>
-                            </li>
-                        </ul>
-                        <ul class="nav-list">
-                            <li class="nav-item">
-                                <a href="https://github.com/mwchiao" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                class="external-link">
-                                    Github
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.linkedin.com/in/mwchiao/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                class="external-link">
-                                    LinkedIn
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                cat hello_world
+            </div>
+            <h1>hello, world!</h1>
+            <p>My name is Maxim Chiao.</p>
+            <p>I am a software engineer! I like to make things and satisfy my curiosities through code and technology. I love to think how technology plays a role in the world, for better or for worse, and I am a big fan of open source!</p>
+            <p>Please take a look around!</p>
+            <p>Learn more <a href="/about">about me</a>, check out my <a href="/work">work experience</a>, and see what <a href="/projects">projects</a> I am working on!</p>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                <span class="cursor">&#9608;</span>
+            </div>
         </main>
     </div>
-
     <footer class="footer">
         <span>Made with ♥️ by Maxim</span>
     </footer>

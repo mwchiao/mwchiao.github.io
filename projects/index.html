@@ -6,63 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="../scroll.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="nav-header">
-            <a href="/" class="home-link">../chiao.dev</a>
+    <div class="nav-bar">
+        <div>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                ls . 
+            </div>
+        </div>
+        <nav>
+            <ul class="directory">
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about me</a></li>
+                <li><a href="/work">work experience</a></li>
+                <li><a href="/projects">projects</a></li>
+            </ul>
         </nav>
-        <main class="full-page">
-            <div>
-                <h1>Projects</h1>
-                <p>A selected collection of side projects I've worked on.</p>
-                <div id="scroll-container">
-                    <section class="scroll-wrapper">
-                        <div class="scroll-content">
-                            <h3>chiao.dev</h3>
-                            <span class="project-status" data-status="on-going">On-going</span>
-                            <p>It's what you are looking at right now! My personal website/portfolio.</p>
-                            <p>Made with HTML and CSS</p>
-                            <a href="https://github.com/mwchiao/mwchiao.github.io" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="source-link external-link">
-                                Source code
-                            </a>
-                        </div>
-                    </section>
-                    <section class="scroll-wrapper">
-                        <div class="scroll-content">
-                            <h3>FRED The Anti-bot CAPTCHA</h3>
-                            <span class="project-status" data-status="complete">Complete</span>
-                            <p>The final project for ECS153: Computer Security. We used Python and TensorFlow to train adversarial examples to fool ML CAPTCHA bots.</p>
-                            <p>Made with Python and TensorFlow</p>
-                            <a href="https://github.com/ECS153/final-project-the-flintstones" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="source-link external-link">
-                                Source code
-                            </a>
-                        </div>
-                    </section>
-                    <section class="scroll-wrapper">
-                        <div class="scroll-content">
-                            <h3>DavisHeatMap</h3>
-                            <span class="project-status" data-status="complete">Complete</span>
-                            <p>A Python app that displays how densely populated a given building is on campus at a given time. Created during HackDavis 2018. I worked on this as a contributor.</p>
-                            <p>Made with Python and Folium</p>
-                            <a href="https://github.com/DylonDickinson/hackDavis" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="source-link external-link">
-                                Source code
-                            </a>
-                        </div>
-                    </section>
-                </div>
-                <p>View all my projects on <a href="https://github.com/mwchiao?tab=repositories" target="_blank" rel="noopener noreferrer" class="external-link">GitHub</a></p>
+    </div>
+    <div class="window">
+        <main>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">~</span> <span class="prompt-symbol">$ </span>
+                cd projects 
+            </div>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">projects</span> <span class="prompt-symbol">$ </span>
+                cat side_projects
+            </div>
+            <h1>project highlights</h1>
+            <p>A select collection of side projects that I have been working on.</p>
+            <section>
+                <h2>watchdog</h2>
+                <p>watchdog is a simple Discord bot written in Go to catch and take action against low-effort spammers. It is meant to be a set-and-forget solution for Discord server moderators to catch low-effort spammers by automatically taking actions against said spammers when they trigger a honeypot channel.</p>
+                <p><a class="external" href="https://github.com/mwchiao/watchdog" target="_blank" rel="noopener noreferrer">Source code</a></p>
+            </section>
+            <section>
+                <h2>chiao.dev</h2>
+                <p>It's what you are looking at right now! It my is personal website/portfolio. I made it with HTML and CSS, and intentionally excluded JavaScript as my contribution to a simpler, lighter weight web browsing experience.</p>
+                <p><a class="external" href="https://github.com/mwchiao/mwchiao.github.io" target="_blank" rel="noopener noreferrer">Source code</a></p>
+            </section>
+            <section>
+                <h2>blog.chiao.dev</h2>
+                <p>My personal blog where I share my observations, learnings, and insights about the projects and technologies I am working work. Not only is this a place to share things, but it also scratches a personal itch of wanting to make my own bespoke static site generator in Go to learn more about the language! The front-end is just HTML and CSS for the same reasons as my portfolio website.</p>
+                <p><a class="external" href="https://blog.chiao.dev" target="_blank" rel="noopener noreferrer">blog.chiao.dev</a></p>
+            </section>
+            <section>
+                <h2>All other projects</h2>
+                <p>Free feel to check out my other projects on <a class="external" href="https://github.com/mwchiao?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a> too!</p>
+            </section>
+            <div class="cmd-line" aria-hidden="true">
+                <span class="host">maxim@chiao.dev</span>: <span class="directory">projects</span> <span class="prompt-symbol">$ </span>
+                <span class="cursor">&#9608;</span>
             </div>
         </main>
     </div>
