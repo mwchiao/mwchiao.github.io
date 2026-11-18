@@ -82,7 +82,7 @@ a.external::after {
 }
 
 .cursor {
-    animation: blink 1s steps(2, end) infinite;
+    animation: blink 1s infinite;
 }
 
 .debug {
@@ -101,10 +101,10 @@ a.external::after {
 }
 
 @keyframes blink {
-    from { 
-        opacity: 1; 
+    to, from {
+        color: transparent;
     }
-    to { 
-        opacity: 0; 
+    50% {
+        color: var(--white);
     }
 }
